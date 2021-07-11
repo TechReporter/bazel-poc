@@ -3,10 +3,11 @@ This document is based on my understanding on Bazel.
 Bazel is a build tool for java based application like maven.
 It will create a BUILD and WORKSPACE file.
 BUILD file is blueprint for java_binary created with src package and main file name.
-java_binary(
+```java_binary(
     name = "TestApp",
     srcs = glob(["src/main/java/com/poc/*.java"]),
 }
+```
 Thi is root package and all file under /poc will be scan and build by Bazel.
 It will also create a target directory.
 This rule will tell bazel to run a jar file.
@@ -22,11 +23,13 @@ It can have a pattern matcher like
         ["**/*.java"],
         exclude = ["**/testing/**"],
     ),
-)```
+)
+```
 To exclude package /testing.
 In Bazel we can specify multiple target folder to build.
 This will create multi-module project.
-deps = [":greeter"],
+```deps = [":greeter"],
+```
 is helps to inject dependent library while build.
 For each sub-module a separate BUILD file will create.
 
