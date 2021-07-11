@@ -16,13 +16,13 @@ We can exclude directory to be scan on runtime. Using exclude_directories =1.
 
 # bazel build glob
 It can have a pattern matcher like
-java_library(
+```java_library(
     name = "mylib",
     srcs = glob(
         ["**/*.java"],
         exclude = ["**/testing/**"],
     ),
-)
+)```
 To exclude package /testing.
 In Bazel we can specify multiple target folder to build.
 This will create multi-module project.
